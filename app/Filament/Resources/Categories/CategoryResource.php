@@ -23,6 +23,7 @@ class CategoryResource extends Resource
     protected static ?string $slug = 'categorias';
     protected static string|UnitEnum|null $navigationGroup = 'Administracion';
 
+    
     protected static ?string $model = Category::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
