@@ -27,9 +27,15 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
+            ->brandName('Ecommerce')
+            ->brandLogo(asset('image/logoBlack.jpeg'))
+            ->darkModeBrandLogo(asset('image/logo.png'))
+            ->brandLogoHeight('3rem')
             ->login()
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => Color::Emerald,
+                'danger' => Color::Red,
+                'gray' => Color::Gray,
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')
