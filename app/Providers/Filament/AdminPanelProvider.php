@@ -18,12 +18,14 @@ use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Nagi\FilamentAbyssTheme\FilamentAbyssThemePlugin;
 
 class AdminPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {
         return $panel
+            ->plugin(FilamentAbyssThemePlugin::make())
             ->default()
             ->id('admin')
             ->path('admin')
@@ -31,6 +33,9 @@ class AdminPanelProvider extends PanelProvider
             ->brandLogo(asset('image/logoBlack.jpeg'))
             ->darkModeBrandLogo(asset('image/logo.png'))
             ->brandLogoHeight('3rem')
+            ->favicon(asset('image/icon.png'))
+            ->font('Oswald')
+            ->sidebarCollapsibleOnDesktop()
             ->login()
             ->colors([
                 'primary' => Color::Emerald,
